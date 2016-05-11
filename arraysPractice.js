@@ -175,8 +175,8 @@ function addItem(myGroceryList, item) {
   }
 }
 
-//removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
-//addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
+removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
+addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
 
 
 
@@ -187,7 +187,12 @@ function addItem(myGroceryList, item) {
 //Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 
   //Code Here
-
+function maker() {
+  var numArray = [];
+  for (var i = 1; i < 216; i++) {
+    numArray.push(i);
+  }
+}
 
 
 //Next Problem
