@@ -249,8 +249,10 @@ function longer(arr1, arr2) {
 function both(arr1, arr2) {
   var bothArr = [];
   for (var i = arr1.length - 1; i >= 0; i--) {
-    if (arr1[i]===arr2[i]) {
-      bothArr.push(i);
+    for (var j = arr2.length -1; i >= 0; i--) {
+      if (arr1[i]===arr2[j]) {
+        bothArr.push(arr1[i]);
+      }
     }
   }
   return bothArr;
