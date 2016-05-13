@@ -203,8 +203,15 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
   //Code Here
+// function addTen(numbers) {
+//   for (var i = numbers.length - 1; i >= 0; i--) {
+//     parseInt(i);
+//     i += 10;
+//   }
+//   return numbers;
+// }
 
-
+numbers.map(function(item){return item*1 + 10;})
 
 //Next Problem
 
@@ -224,7 +231,13 @@ for(var i = 0; i < num2; i++){
 //Write a function called 'longer' that is given arr1 and arr2 as it's only arguments. Return the array which is longest.
 
   //Code Here
-
+function longer(arr1, arr2) {
+  if (arr1.length>arr2.length) {
+    return arr1;
+  } else {
+    return arr2;
+  }
+}
 
 /*As a continuation of the previous problem, write another function called 'both'.
   Your 'both' function will be given two arguments, arr1 and arr2 (from the previous example).
@@ -233,7 +246,15 @@ for(var i = 0; i < num2; i++){
 */
 
   //Code Here
-
+function both(arr1, arr2) {
+  var bothArr = [];
+  for (var i = arr1.length - 1; i >= 0; i--) {
+    if (arr1[i]===arr2[i]) {
+      bothArr.push(i);
+    }
+  }
+  return bothArr;
+}
 
 
 
@@ -273,12 +294,16 @@ array with those four objects. After that console.log the length of the Array an
 sure that it's equal to 4. */
 
   //Code Here
+devMountainEmployees.splice(0,0,[tyler, cahlan, ryan, colt]);
 
 /*Now let's say Cahlan has a mental breakdown and has to take a leave of absence to 'find himself'.
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
 
   //Code Here
-
+for (var employee in devMountainEmployees[]) {
+  if (employee.name === 'Cahlan')
+    devMountainEmployees.splice(devMountainEmployees.indexOf(employee), 1);
+}
 
 
 
@@ -288,7 +313,7 @@ Loop through your devMountainEmployees until you find cahlan, then remove him fr
 
 
 /*Now we're going to combine what we've learned today (objects) with what we learned
-yesterday (arrays). Yeah, take a deep breathe. You're ready for this, promise.
+yesterday (arrays). Yeah, take a deep breath. You're ready for this, promise.
 Let's think back to our itunes example (tylermcginnis.com/itunes).
 Notice that when you type in an artist name, iTunes gives us back a LOT of data.
 What they're really giving us is an Array full of Objects. It probably looks something
@@ -320,6 +345,7 @@ of Data is to have an Array full of objects. */
 //Create an empty array called users.
 
   //Code Here
+var users = [];
 
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
@@ -332,7 +358,21 @@ var user1 = {
     username: 'infiniateLoop'
 };
 
-//Your Code Here
+var user2 = {
+    name: 'Olav Trygvasson',
+    email: 'olavtryggvi@epost.no',
+    password: 'daudthor',
+    username: 'tryggvi'
+};
+
+var user3 = {
+    name: 'Nicholas Nelson',
+    email: 'nick@rampantraithe.com'
+    password: '1337'
+    username: 'thenickhis'
+};
+
+users.push(user1,user2,user3);
 
 /*Now you have a very common data structure. Twitter is a good use case.
 It's easy to imagine that your followers list on Twitter is an Array full or objects
@@ -343,5 +383,9 @@ objects until you find Tyler's account (use tylermcginnis33@gmail.com to find hi
 Once you find the particular index he's located in, delete him from the array.*/
 
   //Code Here
+for (var i in users[]) {
+  if (i.email === "tylermcginnis33@gmail.com")
+    users.splice(users.indexOf(i), 1);
+}
 
 //The activity we just did is very much how data works in 'the real world'.
